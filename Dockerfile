@@ -1,4 +1,4 @@
-FROM        ubuntu
+FROM ubuntu:14.04
  
 # Update the package repository
 RUN apt-get update; apt-get upgrade -y
@@ -8,9 +8,6 @@ RUN apt-get install -y varnish
 
 # Make our custom VCLs available on the container
 ADD default.vcl /etc/varnish/default.vcl
-
-ENV VARNISH_BACKEND_PORT 80
-ENV VARNISH_PORT 80
 
 # Expose port 80
 EXPOSE 80
