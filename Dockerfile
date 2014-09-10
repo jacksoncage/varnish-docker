@@ -1,4 +1,7 @@
 FROM ubuntu:14.04
+
+# Set the env variable DEBIAN_FRONTEND to noninteractive
+ENV DEBIAN_FRONTEND noninteractive
  
 # Update the package repository
 RUN apt-get update; apt-get upgrade -y
