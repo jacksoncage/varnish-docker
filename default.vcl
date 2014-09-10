@@ -5,8 +5,8 @@
 # server.
 #
 backend default {
-    .host = "${VARNISH_BACKEND_IP}}";
-    .port = "${VARNISH_BACKEND_PORT}";
+    .host = "changehost";
+    .port = "changeport";
 }
 #
 # Below is a commented-out copy of the default VCL logic.  If you
