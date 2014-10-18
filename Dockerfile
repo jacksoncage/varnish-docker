@@ -18,5 +18,5 @@ ENV VARNISH_PORT 80
 # Expose port 80
 EXPOSE 80
 
-ADD start /start.sh
+ADD start.sh /start.sh
 CMD ["/start.sh"]
