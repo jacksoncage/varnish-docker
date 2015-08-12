@@ -8,8 +8,7 @@ RUN apt-get update -qq && \
   apt-get -yqq install varnish && \
   apt-get -yqq clean
 
-# Make our custom VCLs available on the container
-ADD default.vcl /etc/varnish/default.vcl
+ADD start.sh /start.sh
 
 ENV \
   VARNISH_BACKEND_IP=172.17.42.1 \
@@ -22,5 +21,7 @@ EXPOSE 80
 # Expose volumes to be able to use data containers
 VOLUMES ["/var/lib/varnish", "/etc/varnish"]
 
-ADD start.sh /start.sh
+# Make our custom VCLs available on the container
+ADD default.vcl /etc/varnish/default.vcl
+
 CMD ["/start.sh"]
